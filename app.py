@@ -15,11 +15,11 @@ for x in (data[0]['rates']):
 
 app = Flask(__name__)
 
-@app.route ('/message', methods = ['GET', 'POST'])
-def message ():
+@app.route ('/exchange', methods = ['GET', 'POST'])
+def exchange ():
     if request.method == 'GET':
         print('We received GET')
-        return render_template ('walutomat.html')
+        return render_template ('walutomat.html', currencies=dict_rates)
     elif request.method == 'POST':
         print ('We received POST')
         print (request.form)
