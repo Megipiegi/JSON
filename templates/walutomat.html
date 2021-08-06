@@ -9,10 +9,9 @@
   <form action="/result" method="POST">
     <label for="currency_code">Wybierz kod waluty:</label>
     <select name="currency_code" id="currency_code">
-      <option value="USD">USD</option>
-      <option value="AUD">AUD</option>
-      <option value="CAD">CAD</option>
-      <option value="EUR">EUR</option>
+    {% for code in currencies %}
+      <option value="{{ code }}">{{ code }}</option>
+    {% endfor %}
     </select>
     <br><br>
     <label for="currency_amount">Ile waluty chcesz kupić?:</label>

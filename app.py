@@ -19,7 +19,7 @@ app = Flask(__name__)
 def message ():
     if request.method == 'GET':
         print('We received GET')
-        return render_template ('walutomat.html')
+        return render_template ('walutomat.html', currencies=dict_rates)
     elif request.method == 'POST':
         print ('We received POST')
         print (request.form)
